@@ -50,7 +50,17 @@ android {
 }
 
 dependencies {
+    // Retrofit para hacer solicitudes HTTP de manera sencilla
+    implementation ("com.squareup.retrofit2:retrofit:2.9.0")
 
+    // Convertidor Simple XML para Retrofit, para trabajar con XML
+    implementation("com.squareup.retrofit2:converter-simplexml:2.9.0")
+
+    // Dependencia de Gson para convertir objetos de Kotlin a JSON y viceversa
+    implementation ("com.google.code.gson:gson:2.8.8")
+
+    // Biblioteca OkHttp para realizar solicitudes HTTP
+    implementation ("com.squareup.okhttp3:okhttp:4.9.2")
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
