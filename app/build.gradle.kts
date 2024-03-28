@@ -18,6 +18,7 @@ android {
         vectorDrawables {
             useSupportLibrary = true
         }
+        signingConfig = signingConfigs.getByName("debug")
     }
 
     buildTypes {
@@ -47,9 +48,11 @@ android {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
     }
+    buildToolsVersion = "34.0.0"
 }
 
 dependencies {
+    implementation ("androidx.core:core-ktx:1.7.0")
     // Retrofit para hacer solicitudes HTTP de manera sencilla
     implementation ("com.squareup.retrofit2:retrofit:2.9.0")
 
@@ -61,6 +64,21 @@ dependencies {
 
     // Biblioteca OkHttp para realizar solicitudes HTTP
     implementation ("com.squareup.okhttp3:okhttp:4.9.2")
+
+    val nav_version = "2.7.7"
+    // Kotlin
+    implementation ("androidx.navigation:navigation-fragment-ktx:$nav_version")
+    implementation ("androidx.navigation:navigation-ui-ktx:$nav_version")
+
+    // Feature module Support
+    implementation ("androidx.navigation:navigation-dynamic-features-fragment:$nav_version")
+
+    // Testing Navigation
+    androidTestImplementation ("androidx.navigation:navigation-testing:$nav_version")
+
+    // Jetpack Compose Integration
+    implementation ("androidx.navigation:navigation-compose:$nav_version")
+    implementation ("androidx.compose.material:material-icons-extended:1.3.1")
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)

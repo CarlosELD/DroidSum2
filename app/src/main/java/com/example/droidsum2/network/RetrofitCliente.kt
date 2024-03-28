@@ -16,12 +16,13 @@ object RetrofitCliente {
         })
     }.build()
 
-    val instance: ApiService by lazy {
+    @Suppress("DEPRECATION")
+    val instance: SumService by lazy {
         val retrofit = Retrofit.Builder()
             .baseUrl(BASE_URL)
             .client(client)
             .addConverterFactory(SimpleXmlConverterFactory.create())
             .build()
-        retrofit.create(ApiService::class.java)
+        retrofit.create(SumService::class.java)
     }
 }
